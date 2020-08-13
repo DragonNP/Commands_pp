@@ -1,13 +1,19 @@
+from mongoengine import connect
 from telethon import TelegramClient, events
+from telemongo import MongoSession
 import logging
+import os
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.INFO)
 
-api_id = '1466003'
-api_hash = 'b343987a4f9a7504aa955c34481e671b'
+API_ID = os.getenv("API_ID")
+API_HASH = os.getenv("API_HASH")
+HOST = os.getenv("HOST")
 
-client = TelegramClient('commands_pp', api_id, api_hash)
+connect('telethon', host=HOST)
+session = MongoSession('telethon', host=HOST)
+client = TelegramClient(session,  API_ID, API_HASH)
 
 
 @client.on(events.NewMessage(pattern='@all'))
