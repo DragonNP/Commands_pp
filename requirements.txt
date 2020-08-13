@@ -1,3 +1,4 @@
-Telethon==1.16.2
-telemongo==0.1.0
+telethon==1.16.2
+telemongo>=0.1.0
 dnspython==2.0.0
+pymongo==3.11.0
