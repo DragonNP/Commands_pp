@@ -4,3 +4,5 @@ pymongo==3.11.0
 pyaes==1.6.1
 rsa==4.6
 pyasn1==0.4.8
+mongoengine==0.20.0
+pymongo==3.11.0
