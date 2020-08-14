@@ -1,1 +1,1 @@
-web: python Commands_pp/__init__.py
+worker: python Commands_pp/__init__.py
